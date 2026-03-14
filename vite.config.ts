@@ -21,7 +21,7 @@ export default defineConfig(({mode}) => {
       hmr: process.env.DISABLE_HMR !== 'true',
     },
     build: {
-    sourcemap: false, // 確保它是 false
+    sourcemap: false,
   },
   };
 });
