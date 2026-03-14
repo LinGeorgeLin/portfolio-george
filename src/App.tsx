@@ -5,14 +5,8 @@
 
 import { ReactNode } from "react";
 import { motion } from "motion/react";
-import { 
-  Disc, 
-  Github, 
-  Instagram, 
-  Mail, 
-  ExternalLink 
-} from "lucide-react";
-import GeorgeAvatar from './assets/GeorgeAvatar.jpg';
+import { Disc, Github, Instagram, Mail, ExternalLink } from "lucide-react";
+import GeorgeAvatar from "./assets/GeorgeAvatar.jpg";
 
 const SectionTitle = ({ children }: { children: ReactNode }) => (
   <h3 className="text-xl font-bold mt-9 mb-4 inline-block border-b-4 border-[#525252]">
@@ -20,14 +14,14 @@ const SectionTitle = ({ children }: { children: ReactNode }) => (
   </h3>
 );
 
-const SocialItem = ({ 
-  href, 
-  icon: Icon, 
-  children 
-}: { 
-  href: string; 
-  icon: any; 
-  children: ReactNode 
+const SocialItem = ({
+  href,
+  icon: Icon,
+  children,
+}: {
+  href: string;
+  icon: any;
+  children: ReactNode;
 }) => (
   <motion.a
     href={href}
@@ -44,25 +38,23 @@ const SocialItem = ({
 export default function App() {
   const fadeInVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: "easeOut" }
-    }
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
   };
 
   return (
     <div className="min-h-screen flex flex-col items-center pb-24 selection:bg-accent-teal/30">
       {/* Navigation */}
       <nav className="fixed top-0 w-full h-14 backdrop-blur-md bg-bg-dark/50 z-50 flex justify-center items-center border-b border-border-glass">
-        <div className="w-full max-w-[500px] px-5 font-bold">
-          George Lin
-        </div>
+        <div className="w-full max-w-[500px] px-5 font-bold">George Lin</div>
       </nav>
 
       <main className="w-full max-w-[500px] pt-24 px-5">
         {/* Hero Section */}
-        <motion.div 
+        <motion.div
           className="flex flex-col-reverse sm:flex-row justify-between items-start sm:items-center mb-10 gap-5"
           initial="hidden"
           whileInView="visible"
@@ -75,14 +67,14 @@ export default function App() {
               Digital Craftsman ( Student / Dev / Guitarist )
             </p>
           </div>
-          <motion.div 
+          <motion.div
             className="w-24 h-24 rounded-full border-2 border-white overflow-hidden shadow-2xl flex-shrink-0"
             whileHover={{ scale: 1.1, rotate: 5 }}
             transition={{ duration: 0.5 }}
           >
-            <img 
+            <img
               src={GeorgeAvatar}
-              alt="George" 
+              alt="George"
               className="w-full h-full object-cover"
               referrerPolicy="no-referrer"
             />
@@ -98,7 +90,9 @@ export default function App() {
         >
           <SectionTitle>Work</SectionTitle>
           <p className="text-base leading-relaxed mb-4 text-[#e2e8f0]">
-            我是國立中山大學企管系的學生，熱衷於將網頁設計、App 開發與人工智慧技術結合。我喜歡在簡潔的代碼中構建美感，並不斷探索 AI 在數位產品中的無限可能。
+            我是國立中山大學企管系的學生，熱衷於將網頁設計、App
+            開發與人工智慧技術結合。我喜歡在簡潔的代碼中構建美感，並不斷探索 AI
+            在數位產品中的無限可能。
           </p>
         </motion.section>
 
@@ -111,7 +105,8 @@ export default function App() {
         >
           <SectionTitle>Hobbies</SectionTitle>
           <p className="text-base leading-relaxed mb-4 text-[#e2e8f0]">
-            當我不寫程式時，通常會拿起吉他，沉浸在 Fingerstyle 的世界裡，或者是享受我的 Spotify 歌單。
+            當我不寫程式時，通常會拿起吉他，沉浸在 Fingerstyle
+            的世界裡，或者是享受我的 Spotify 歌單。
           </p>
         </motion.section>
 
@@ -130,16 +125,19 @@ export default function App() {
                 <span>Currently Curating</span>
               </div>
               <div className="flex items-end gap-[2px] h-[15px]">
-                <div className="w-[3px] bg-accent-teal rounded-[1px] animate-equalize h-[60%] [animation-delay:0.1s]" />
-                <div className="w-[3px] bg-accent-teal rounded-[1px] animate-equalize h-full [animation-delay:0.3s]" />
-                <div className="w-[3px] bg-accent-teal rounded-[1px] animate-equalize h-[80%] [animation-delay:0.2s]" />
-                <div className="w-[3px] bg-accent-teal rounded-[1px] animate-equalize h-[50%] [animation-delay:0.4s]" />
+                {["0.1s", "0.3s", "0.2s", "0.4s"].map((delay, i) => (
+                  <div
+                    key={i}
+                    className="w-[3px] h-full bg-accent-teal rounded-[1px] animate-equalize"
+                    style={{ animationDelay: delay }}
+                  />
+                ))}
               </div>
             </div>
-            
-            <motion.a 
-              href="https://open.spotify.com/playlist/2iYORhVk0rz8k6uHoLiM1c?si=b3cfb30306684881" 
-              target="_blank" 
+
+            <motion.a
+              href="https://open.spotify.com/playlist/2iYORhVk0rz8k6uHoLiM1c?si=b3cfb30306684881"
+              target="_blank"
               rel="noopener noreferrer"
               className="group relative flex items-center justify-between w-full p-5 bg-[#1DB954]/10 hover:bg-[#1DB954]/20 border border-[#1DB954]/30 rounded-xl transition-all duration-300 overflow-hidden"
               whileHover={{ scale: 1.02 }}
@@ -150,12 +148,14 @@ export default function App() {
                   <Disc className="w-6 h-6 text-black" />
                 </div>
                 <div className="text-left">
-                  <div className="text-[10px] uppercase tracking-widest text-[#1DB954] font-bold mb-0.5">Spotify Playlist</div>
+                  <div className="text-[10px] uppercase tracking-widest text-[#1DB954] font-bold mb-0.5">
+                    Spotify Playlist
+                  </div>
                   <div className="text-sm font-bold text-white">Soul Vibe</div>
                 </div>
               </div>
               <ExternalLink className="w-5 h-5 text-[#1DB954] opacity-50 group-hover:opacity-100 transition-opacity z-10" />
-              
+
               {/* Decorative background glow */}
               <div className="absolute -right-4 -bottom-4 w-24 h-24 bg-[#1DB954]/10 rounded-full blur-2xl group-hover:bg-[#1DB954]/20 transition-colors" />
             </motion.a>
@@ -176,7 +176,10 @@ export default function App() {
         >
           <SectionTitle>Contact</SectionTitle>
           <div className="flex flex-col gap-1 mt-2">
-            <SocialItem href="https://www.instagram.com/george.lin.29" icon={Instagram}>
+            <SocialItem
+              href="https://www.instagram.com/george.lin.29"
+              icon={Instagram}
+            >
               @george.lin.29
             </SocialItem>
             <SocialItem href="https://github.com/LinGeorgeLin" icon={Github}>

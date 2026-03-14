@@ -27,8 +27,13 @@ body {
 }
 
 @keyframes equalize {
-  0%, 100% { height: 40%; }
-  50% { height: 100%; }
+  0%, 100% { transform: scaleY(0.4); }
+  50%       { transform: scaleY(1); }
+}
+
+.animate-equalize {
+  animation: equalize 1s ease-in-out infinite;
+  transform-origin: bottom;
 }
 
 .animate-equalize {
