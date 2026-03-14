@@ -1,0 +1,36 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300;700&display=swap');
+
+@theme {
+  --font-rounded: "M PLUS Rounded 1c", sans-serif;
+  --color-bg-dark: #202023;
+  --color-accent-teal: #81e6d9;
+  --color-text-main: #eeeeee;
+  --color-text-muted: #a0aec0;
+  --color-glass: rgba(255, 255, 255, 0.05);
+  --color-border-glass: rgba(255, 255, 255, 0.1);
+}
+
+body {
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-main);
+  font-family: var(--font-rounded);
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 3s linear infinite;
+}
+
+@keyframes equalize {
+  0%, 100% { height: 40%; }
+  50% { height: 100%; }
+}
+
+.animate-equalize {
+  animation: equalize 1s ease-in-out infinite;
+}
