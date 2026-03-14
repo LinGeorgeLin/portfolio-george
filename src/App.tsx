@@ -7,6 +7,7 @@ import { ReactNode } from "react";
 import { motion } from "motion/react";
 import { Disc, Github, Instagram, Mail, ExternalLink } from "lucide-react";
 import GeorgeAvatar from "./assets/GeorgeAvatar.jpg";
+import { Analytics } from "@vercel/analytics/react";
 
 const SectionTitle = ({ children }: { children: ReactNode }) => (
   <h3 className="text-xl font-bold mt-9 mb-4 inline-block border-b-4 border-[#525252]">
@@ -51,7 +52,7 @@ export default function App() {
       <nav className="fixed top-0 w-full h-14 backdrop-blur-md bg-bg-dark/50 z-50 flex justify-center items-center border-b border-border-glass">
         <div className="w-full max-w-[500px] px-5 font-bold">George Lin</div>
       </nav>
-
+      <Analytics />
       <main className="w-full max-w-[500px] pt-24 px-5">
         {/* Hero GIF Banner */}
         <motion.div
@@ -67,7 +68,7 @@ export default function App() {
             className="w-full h-[200px] object-cover"
           />
         </motion.div>
-        
+
         {/* Hero Section */}
         <motion.div
           className="flex flex-col-reverse sm:flex-row justify-between items-start sm:items-center mb-10 gap-5"
