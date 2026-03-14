@@ -53,6 +53,21 @@ export default function App() {
       </nav>
 
       <main className="w-full max-w-[500px] pt-24 px-5">
+        {/* Hero GIF Banner */}
+        <motion.div
+          className="w-full rounded-2xl overflow-hidden mb-6"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeInVariants}
+        >
+          <img
+            src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExeWl5cXNjNDRld290engwcW82YW45aDY2ODZxMTRlbWVjaWw5YjB1YSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l41YaNvl2bleRuppK/giphy.gif"
+            alt="hero banner"
+            className="w-full h-[200px] object-cover"
+          />
+        </motion.div>
+        
         {/* Hero Section */}
         <motion.div
           className="flex flex-col-reverse sm:flex-row justify-between items-start sm:items-center mb-10 gap-5"
