@@ -68,7 +68,7 @@ export default function Works() {
         {/* List */}
         {/* Grid 雙欄，卡片縮小 */}
         <motion.div
-          className="grid grid-cols-2 gap-4"
+          className="grid grid-cols-1 sm:grid-cols-2 gap-4"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
@@ -87,7 +87,7 @@ export default function Works() {
               <img
                 src={project.img}
                 alt={project.title}
-                className="w-full h-[110px] object-cover bg-white/5"
+                className="w-full h-[180px] sm:h-[110px] object-cover bg-white/5"
                 loading="lazy"
               />
               <div className="p-3 flex flex-col flex-1">
